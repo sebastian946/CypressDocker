@@ -4,12 +4,21 @@
   "description": "In this project I going a practice about the advantage docker with cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress run",
+    "open-api": "cypress run --headed --spec 'cypress/e2e/api/**/*.spec.{js,ts,jsx,tsx}'",
+    "open-ui": "cypress run --headed --spec 'cypress/e2e/ui/**/*.spec.{js,ts,jsx,tsx}'",
+    "test-electron": "cypress run",
+    "report:generate": "marge cypress/reports/mochawesome.json --reportDir cypress/reports --inline"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.15.2"
+    "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
+    "cucumber": "^6.0.7",
+    "prettier": "^3.3.3"
+  },
+  "devDependencies": {
+    "cypress": "^13.17.0"
   }
 }
