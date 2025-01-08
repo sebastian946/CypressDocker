@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-08T20:07:51.242Z",
+    "end": "2025-01-08T20:07:54.893Z",
+    "duration": 3651,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "af0948b0-dfb5-41ec-b452-f19faf4fd4af",
+      "title": "",
+      "fullFile": "cypress/e2e/ui/login.spec.js",
+      "file": "cypress/e2e/ui/login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "97a1b4b0-ceec-4d84-b0fb-eaeb5937bc75",
+          "title": "Login Page Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should display the main page",
+              "fullTitle": "Login Page Tests should display the main page",
+              "timedOut": null,
+              "duration": 2713,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get(SELECTORS.TITLE).should('contain.text', 'Welcome');",
+              "err": {},
+              "uuid": "eb7f5c4c-90c0-46ca-87e3-8c49ed2bc4b4",
+              "parentUUID": "97a1b4b0-ceec-4d84-b0fb-eaeb5937bc75",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "search user github name",
+              "fullTitle": "Login Page Tests search user github name",
+              "timedOut": null,
+              "duration": 823,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get(SELECTORS.INPUT_USERNAME).type('Sebastian');\ncy.get(SELECTORS.BUTTON_SEARCH).click();\ncy.get(SELECTORS.TITLE_USER).should('contain.text', 'Sebastian').then(() => {\n  cy.log('This UI testing pass success');\n});",
+              "err": {},
+              "uuid": "6db44746-4f56-4cdb-a845-a483d2d18794",
+              "parentUUID": "97a1b4b0-ceec-4d84-b0fb-eaeb5937bc75",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "eb7f5c4c-90c0-46ca-87e3-8c49ed2bc4b4",
+            "6db44746-4f56-4cdb-a845-a483d2d18794"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3536,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "my-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/.jsons",
+        "charts": true,
+        "reportFilename": "my-report",
+        "reportPageTitle": "Docker report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-08T20:55:43.519Z",
+    "end": "2025-01-08T20:55:44.975Z",
+    "duration": 1456,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5ff13a46-3a06-452b-b3e1-9d4ec7305a22",
+      "title": "",
+      "fullFile": "cypress/e2e/api/users.spec.js",
+      "file": "cypress/e2e/api/users.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c6cf54d3-5e43-408a-9dba-d9ba329116e8",
+          "title": "User API testing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should get all the users",
+              "fullTitle": "User API testing should get all the users",
+              "timedOut": null,
+              "duration": 704,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', URL).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.be.an('array');\n  expect(response.body.length).to.be.greaterThan(0);\n});",
+              "err": {},
+              "uuid": "bc9d40e9-d46b-4271-9ac4-7cb8667bad6b",
+              "parentUUID": "c6cf54d3-5e43-408a-9dba-d9ba329116e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should create a user",
+              "fullTitle": "User API testing should create a user",
+              "timedOut": null,
+              "duration": 685,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('POST', URL, {\n  name: 'Sebastian Duque',\n  email: 'j@g.com'\n}).then(response => {\n  expect(response.status).to.eq(201);\n  expect(response.body).to.have.property('name', 'Sebastian Duque');\n  expect(response.body).to.have.property('email', 'j@g.com');\n  cy.log(response.body);\n});",
+              "err": {},
+              "uuid": "8752c64e-6140-4886-8168-e8f98e30d56f",
+              "parentUUID": "c6cf54d3-5e43-408a-9dba-d9ba329116e8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bc9d40e9-d46b-4271-9ac4-7cb8667bad6b",
+            "8752c64e-6140-4886-8168-e8f98e30d56f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1389,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "my-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/.jsons",
+        "charts": true,
+        "reportFilename": "my-report",
+        "reportPageTitle": "Docker report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
